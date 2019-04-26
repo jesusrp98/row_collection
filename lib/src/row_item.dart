@@ -1,13 +1,34 @@
 import 'package:flutter/material.dart';
 
+/// ICON COLOR CLASS
+/// It defines the default colors used in the [RowItem.icon] widget.
+/// The [positive] color will be used when the boolean parameter is TRUE,
+/// the [negative] color when it's FALSE, and when its value is considered NULL,
+/// it will pick the [empty] color.
+class IconColor {
+  static const Color positive = Color(0xFF4CAF50);
+  static const Color negative = Color(0xFFF44336);
+  static const Color empty = Color(0xFF607D8B);
+}
+
 /// ROW ITEM WIDGET
+/// This widget has been designed to represent a text, with its associated value.
+/// The [title] widget will be located at the left of the [RowItem] widget,
+/// and the [description] widget, at the right.
 class RowItem extends StatelessWidget {
-  final Widget title, description;
+  /// Main text of the widget, located at the left.
+  final Widget title;
+
+  /// Associated value of the [title] parameter, localed at the right.
+  final Widget description;
 
   const RowItem({
+    Key key,
     @required this.title,
     @required this.description,
-  });
+  })  : assert(title != null),
+        assert(description != null),
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +53,9 @@ class RowItem extends StatelessWidget {
     );
   }
 
-  /// Builds a normal Text-to-Text row item
+  /// ROW ITEM: TEXT
+  /// Builds a 'text-to-text' widget. Useful when the associated
+  /// value can be represented with a [Text] widget.
   factory RowItem.text(
     String title,
     String description, {
@@ -45,7 +68,9 @@ class RowItem extends StatelessWidget {
     );
   }
 
-  /// Builds a Text-to-Icon row item, to display a boolean status
+  /// ROW ITEM: ICON
+  /// Builds a 'text-to-boolean' widget. Useful when the associated
+  /// value with a boolean value, which can be represented with an icon.
   factory RowItem.icon(
     String title,
     bool status, {
@@ -63,7 +88,9 @@ class RowItem extends StatelessWidget {
     );
   }
 
-  /// Builds a Text-to-Text widget, but the description widget is clickable
+  /// ROW ITEM: CLICKABLE
+  /// Builds a 'text-to-text' widget. It allows the associated value,
+  /// in this case a [Text] widget, to be clickable by the user.
   factory RowItem.clickable(
     String title,
     String description, {
@@ -87,7 +114,8 @@ class RowItem extends StatelessWidget {
     );
   }
 
-  /// Return an icon based on the [value] variable
+  /// Returns an icon based on the [value] variable.
+  /// Various [Icon] parameters can be set as well.
   static Widget _icon(bool value, {Color color, double size}) {
     final Color finalColor = color ??
         (value == null
@@ -101,7 +129,9 @@ class RowItem extends StatelessWidget {
     );
   }
 
-  /// Returns a description text
+  /// Returns a [Text] widget, using the [text] variable.
+  /// It checks if can be clickable, with the [clickable] parameter.
+  /// Various of its paremeters can be set.
   static Widget _text(String text, {TextStyle style, bool clickable = false}) {
     final TextStyle finalStyle = style != null
         ? style.copyWith(
@@ -119,10 +149,4 @@ class RowItem extends StatelessWidget {
       style: finalStyle,
     );
   }
-}
-
-class IconColor {
-  static const Color positive = Color(0xFF4CAF50);
-  static const Color negative = Color(0xFFF44336);
-  static const Color empty = Color(0xFF607D8B);
 }
