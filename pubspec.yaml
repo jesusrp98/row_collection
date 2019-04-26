@@ -1,8 +1,8 @@
 name: row_collection
-description: A new Flutter package project.
-version: 0.0.1
-author:
-homepage:
+description: Collection of various custom widgets, useful in Columns.
+version: 1.0.0
+author: Jesus Rodriguez <jesusrope98@outlook.com>
+homepage: https://github.com/jesusrp98/row_collection
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
