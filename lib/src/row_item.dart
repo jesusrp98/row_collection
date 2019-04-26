@@ -2,13 +2,10 @@ import 'package:flutter/material.dart';
 
 /// ROW ITEM WIDGET
 class RowItem extends StatelessWidget {
-  final String title;
-  final TextStyle style;
-  final Widget description;
+  final Widget title, description;
 
-  RowItem({
+  const RowItem({
     @required this.title,
-    this.style,
     @required this.description,
   });
 
@@ -19,15 +16,13 @@ class RowItem extends StatelessWidget {
       children: <Widget>[
         Expanded(
           flex: 5,
-          child: Text(
-            title,
-            style: style,
-            overflow: TextOverflow.ellipsis,
-            maxLines: 1,
+          child: Align(
+            alignment: Alignment.centerLeft,
+            child: title,
           ),
         ),
         Expanded(
-          flex: 6,
+          flex: 5,
           child: Align(
             alignment: Alignment.centerRight,
             child: description,
@@ -38,33 +33,33 @@ class RowItem extends StatelessWidget {
   }
 
   /// Builds a normal Text-to-Text row item
-  factory RowItem.textRow(
+  factory RowItem.text(
     String title,
     String description, {
     TextStyle titleStyle,
     TextStyle descriptionStyle,
   }) {
     return RowItem(
-      title: title,
-      style: titleStyle,
-      description: _descriptionText(
-        text: description,
-        style: descriptionStyle,
-      ),
+      title: _text(title, style: titleStyle),
+      description: _text(description, style: descriptionStyle),
     );
   }
 
   /// Builds a Text-to-Icon row item, to display a boolean status
-  factory RowItem.iconRow(
+  factory RowItem.icon(
     String title,
     bool status, {
     TextStyle titleStyle,
     Color iconColor,
+    double size = 16,
   }) {
     return RowItem(
-      title: title,
-      style: titleStyle,
-      description: _descriptionIcon(value: status, color: iconColor),
+      title: _text(title, style: titleStyle),
+      description: _icon(
+        status,
+        color: iconColor,
+        size: size,
+      ),
     );
   }
 
@@ -75,18 +70,16 @@ class RowItem extends StatelessWidget {
     TextStyle titleStyle,
     TextStyle descriptionStyle,
     VoidCallback onTap,
-    bool isClickable = true,
   }) {
     return RowItem(
-      title: title,
-      style: titleStyle,
+      title: _text(title, style: titleStyle),
       description: AbsorbPointer(
-        absorbing: !isClickable,
+        absorbing: onTap == null,
         child: InkResponse(
-          child: _descriptionText(
-            text: description,
+          child: _text(
+            description,
             style: descriptionStyle,
-            clickable: isClickable,
+            clickable: onTap != null,
           ),
           onTap: onTap,
         ),
@@ -95,7 +88,7 @@ class RowItem extends StatelessWidget {
   }
 
   /// Return an icon based on the [value] variable
-  static Widget _descriptionIcon({bool value, Color color}) {
+  static Widget _icon(bool value, {Color color, double size}) {
     final Color finalColor = color ??
         (value == null
             ? IconColor.empty
@@ -104,16 +97,12 @@ class RowItem extends StatelessWidget {
     return Icon(
       value == null ? Icons.help : (value ? Icons.check_circle : Icons.cancel),
       color: finalColor,
-      size: 18,
+      size: size,
     );
   }
 
   /// Returns a description text
-  static Widget _descriptionText({
-    String text,
-    TextStyle style,
-    bool clickable = false,
-  }) {
+  static Widget _text(String text, {TextStyle style, bool clickable = false}) {
     final TextStyle finalStyle = style != null
         ? style.copyWith(
             decoration:
@@ -127,8 +116,6 @@ class RowItem extends StatelessWidget {
     return Text(
       text,
       overflow: TextOverflow.ellipsis,
-      maxLines: 1,
-      textAlign: TextAlign.end,
       style: finalStyle,
     );
   }

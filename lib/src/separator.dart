@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
 /// SEPARATOR WIDGET
-/// Auxiliary widget used to separate other widgets.
 class Separator extends StatelessWidget {
   final Widget body;
 
-  Separator(this.body);
+  const Separator(this.body);
 
   @override
   Widget build(BuildContext context) {
