@@ -31,13 +31,13 @@ class HomePage extends StatelessWidget {
               padding: EdgeInsets.all(16),
               child: Column(
                 children: <Widget>[
-                  RowItem.textRow('English', 'Hello'),
+                  RowItem.text('English', 'Hello'),
                   Separator.spacer(),
-                  RowItem.textRow('Español', 'Hola'),
+                  RowItem.text('Español', 'Hola'),
                   Separator.divider(),
-                  RowItem.textRow('English', 'Bye'),
+                  RowItem.text('English', 'Bye'),
                   Separator.spacer(),
-                  RowItem.textRow('Español', 'Adiós'),
+                  RowItem.text('Español', 'Adiós'),
                 ],
               ),
             ),
@@ -48,28 +48,28 @@ class HomePage extends StatelessWidget {
               padding: EdgeInsets.all(16),
               child: Column(
                 children: <Widget>[
-                  RowItem.textRow(
+                  RowItem.text(
                     'English',
                     'Hello',
                     titleStyle: TextStyle(color: Colors.blue),
                     descriptionStyle: TextStyle(fontSize: 18),
                   ),
                   Separator.spacer(),
-                  RowItem.textRow(
+                  RowItem.text(
                     'Español',
                     'Hola',
                     titleStyle: TextStyle(color: Colors.red),
                     descriptionStyle: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   Separator.divider(),
-                  RowItem.textRow(
+                  RowItem.text(
                     'English',
                     'Bye',
                     titleStyle: TextStyle(color: Colors.blue),
                     descriptionStyle: TextStyle(fontStyle: FontStyle.italic),
                   ),
                   Separator.spacer(),
-                  RowItem.textRow(
+                  RowItem.text(
                     'Español',
                     'Adiós',
                     titleStyle: TextStyle(color: Colors.red),
@@ -85,25 +85,25 @@ class HomePage extends StatelessWidget {
               padding: EdgeInsets.all(16),
               child: Column(
                 children: <Widget>[
-                  RowItem.iconRow('Firefox', true),
+                  RowItem.icon('Firefox', true),
                   Separator.spacer(),
-                  RowItem.iconRow('Chrome', false),
+                  RowItem.icon('Chrome', false),
                   Separator.spacer(),
-                  RowItem.iconRow('Opera', null),
+                  RowItem.icon('Opera', null),
                   Separator.divider(),
-                  RowItem.iconRow(
+                  RowItem.icon(
                     'Firefox',
                     true,
                     iconColor: Theme.of(context).accentColor,
                   ),
                   Separator.spacer(),
-                  RowItem.iconRow(
+                  RowItem.icon(
                     'Chrome',
                     false,
                     iconColor: Theme.of(context).accentColor,
                   ),
                   Separator.spacer(),
-                  RowItem.iconRow(
+                  RowItem.icon(
                     'Opera',
                     null,
                     iconColor: Theme.of(context).accentColor,
@@ -127,7 +127,6 @@ class HomePage extends StatelessWidget {
                   RowItem.clickable(
                     'iOS',
                     'Don\'t click',
-                    isClickable: false,
                   ),
                 ],
               ),
