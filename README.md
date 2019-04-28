@@ -11,12 +11,39 @@ As the baseline widget, there's the `RowItem` widget. It offers a multitude of o
 * **Boolean information:** Useful when the associated value with a `boolean` value, which can be represented with an icon.
 * **Interactive information:** It allows the associated value, in this case a `Text` widget, to be clickable by the user.
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/jesusrp98/row_collection/master/screenshots/0.png" width="415" hspace="8">
+  <img src="https://raw.githubusercontent.com/jesusrp98/row_collection/master/screenshots/1.png" width="415" hspace="8">
+</p>
+
+
 This library offers ways to separate this and other interface elements, using the already-implemented `Separator` class:
 * **Spacers:** This kind of elements helps to separate UI elements, such as `RowItem` widgets.
 * **Dividers:** Helpful when you want to emphasize separation between sections.
 * **Empty elements:** Useful when you need to use an 'empty' widget, with `height` & `width` values equal to `0`.
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/jesusrp98/row_collection/master/screenshots/2.png" width="415" hspace="8">
+  <img src="https://raw.githubusercontent.com/jesusrp98/row_collection/master/screenshots/3.png" width="415" hspace="8">
+</p>
+
 Both kind of widgets (`RowItem` & `Separator`) offer ways to be customizable. For instance, you can use the `style` parameter in the `RowItem` widgets to select a custom text theme.
+
+## Example
+Here is an example of a simple use of this package. If you want to take a deeper look at the example, take a look at the [example/](https://github.com/jesusrp98/row_collection/tree/master/example) folder provided with the project.
+```
+Column(
+  children: <Widget>[
+    RowItem.text('English', 'Hello'),
+    Separator.spacer(),
+    RowItem.text('Español', 'Hola'),
+    Separator.divider(),
+    RowItem.text('English', 'Bye'),
+    Separator.spacer(),
+    RowItem.text('Español', 'Adiós'),
+  ],
+),
+```
 
 ## Getting Started
 This project is a starting point for a Dart [package](https://flutter.io/developing-packages/), a library module containing code that can be shared easily across multiple Flutter or Dart projects.
