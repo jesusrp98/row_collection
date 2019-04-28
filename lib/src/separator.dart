@@ -6,7 +6,12 @@ import 'package:flutter/material.dart';
 /// default parameters, which will help developers streamline their desings.
 class Separator {
   /// Normal spacer. This widget can be combined with [RowItem] widgets.
-  static spacer({double height = 12, double width = 0}) {
+  static spacer({double height = 12, double width = 12}) {
+    return SizedBox(height: height, width: width);
+  }
+
+  /// Smaller spacer, ment be combined with [RowItem] widgets.
+  static smallSpacer({double height = 8, double width = 8}) {
     return SizedBox(height: height, width: width);
   }
 
