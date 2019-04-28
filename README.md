@@ -11,10 +11,26 @@ As the baseline widget, there's the `RowItem` widget. It offers a multitude of o
 * **Boolean information:** Useful when the associated value with a `boolean` value, which can be represented with an icon.
 * **Interactive information:** It allows the associated value, in this case a `Text` widget, to be clickable by the user.
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/jesusrp98/row_collection/master/screenshots/0.png" width="415" hspace="8">
+  <img src="https://raw.githubusercontent.com/jesusrp98/row_collection/master/screenshots/1.png" width="415" hspace="8">
+</p>
+
 This library offers ways to separate this and other interface elements, using the already-implemented `Separator` class:
 * **Spacers:** This kind of elements helps to separate UI elements, such as `RowItem` widgets.
 * **Dividers:** Helpful when you want to emphasize separation between sections.
 * **Empty elements:** Useful when you need to use an 'empty' widget, with `height` & `width` values equal to `0`.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/jesusrp98/row_collection/master/screenshots/2.png" width="415" hspace="8">
+  <img src="https://raw.githubusercontent.com/jesusrp98/row_collection/master/screenshots/3.png" width="415" hspace="8">
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/jesusrp98/spacex-go/master/screenshots/0.png" width="256" hspace="8">
+  <img src="https://raw.githubusercontent.com/jesusrp98/spacex-go/master/screenshots/1.png" width="256" hspace="8">
+  <img src="https://raw.githubusercontent.com/jesusrp98/spacex-go/master/screenshots/2.png" width="256" hspace="8">
+</p>
 
 Both kind of widgets (`RowItem` & `Separator`) offer ways to be customizable. For instance, you can use the `style` parameter in the `RowItem` widgets to select a custom text theme.
 
