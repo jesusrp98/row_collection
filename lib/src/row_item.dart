@@ -6,9 +6,9 @@ import 'package:flutter/material.dart';
 /// the [negative] color when it's FALSE, and when its value is considered NULL,
 /// it will pick the [empty] color.
 class IconColor {
-  static const Color positive = Color(0xFF4CAF50);
-  static const Color negative = Color(0xFFF44336);
-  static const Color empty = Color(0xFF607D8B);
+  static const Color positive = Colors.green;
+  static const Color negative = Colors.red;
+  static const Color empty = Colors.blueGrey;
 }
 
 /// ROW ITEM WIDGET
