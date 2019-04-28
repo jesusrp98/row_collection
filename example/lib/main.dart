@@ -88,8 +88,6 @@ class HomePage extends StatelessWidget {
                   RowItem.icon('Firefox', true),
                   Separator.spacer(),
                   RowItem.icon('Chrome', false),
-                  Separator.spacer(),
-                  RowItem.icon('Opera', null),
                   Separator.divider(),
                   RowItem.icon(
                     'Firefox',
@@ -100,12 +98,6 @@ class HomePage extends StatelessWidget {
                   RowItem.icon(
                     'Chrome',
                     false,
-                    iconColor: Theme.of(context).accentColor,
-                  ),
-                  Separator.spacer(),
-                  RowItem.icon(
-                    'Opera',
-                    null,
                     iconColor: Theme.of(context).accentColor,
                   ),
                 ],
@@ -123,9 +115,20 @@ class HomePage extends StatelessWidget {
                     'Click here',
                     onTap: () => print('Clicked!'),
                   ),
-                  Separator.divider(),
+                  Separator.spacer(),
                   RowItem.clickable(
                     'iOS',
+                    'Click here',
+                    onTap: () => print('Clicked!'),
+                  ),
+                  Separator.divider(),
+                  RowItem.clickable(
+                    'Windows Phone',
+                    'Don\'t click',
+                  ),
+                  Separator.spacer(),
+                  RowItem.clickable(
+                    'Symbian',
                     'Don\'t click',
                   ),
                 ],
