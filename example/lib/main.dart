@@ -27,7 +27,7 @@ class HomePage extends StatelessWidget {
         padding: EdgeInsets.all(16),
         children: <Widget>[
           Card(
-            child: LayoutSeparated(
+            child: RowLayout(
               padding: EdgeInsets.all(16),
               children: <Widget>[
                 RowItem.text('English', 'Hello'),
@@ -40,7 +40,7 @@ class HomePage extends StatelessWidget {
           ),
           Separator.cardSpacer(),
           Card(
-            child: LayoutSeparated(
+            child: RowLayout(
               padding: EdgeInsets.all(16),
               children: <Widget>[
                 RowItem.text(
@@ -73,7 +73,7 @@ class HomePage extends StatelessWidget {
           ),
           Separator.cardSpacer(),
           Card(
-            child: LayoutSeparated(
+            child: RowLayout(
               padding: EdgeInsets.all(16),
               children: <Widget>[
                 RowItem.icon('Firefox', true),
@@ -94,7 +94,7 @@ class HomePage extends StatelessWidget {
           ),
           Separator.cardSpacer(),
           Card(
-            child: LayoutSeparated(
+            child: RowLayout(
               padding: EdgeInsets.all(16),
               children: <Widget>[
                 RowItem.clickable(
