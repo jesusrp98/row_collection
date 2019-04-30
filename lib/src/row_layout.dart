@@ -26,29 +26,18 @@ class RowLayout extends StatelessWidget {
     );
   }
 
-  factory RowLayout.spacer({
-    Key key,
-    @required List<Widget> children,
-    EdgeInsets padding,
-    double space = 12,
-  }) {
-    return RowLayout(
-      children: children,
-      padding: padding,
-    );
-  }
-
   /// This method receives a [list] object, and intercalate its
-  /// content with [Separator.spacer] widgets. It takes care about
-  /// the last element of the list, as well as the possibility of
-  /// the [list] object to have a [Separator.divider] object.
+  /// content with [Separator.spacer] widgets, using a 'for' loop.
   List<Widget> _intercalateSpacer(List<Widget> list) {
-    return list
-        .map((item) => list.last != item &&
-                item.runtimeType != Divider &&
-                list[list.indexOf(item) + 1].runtimeType != Divider
-            ? Column(children: [item, Separator.spacer(space: space)])
-            : item)
-        .toList();
+    final List<Widget> auxList = [];
+
+    for (int i = 0; i < list.length * 2 - 1; ++i) {
+      if (i.isEven)
+        auxList.add(list[i ~/ 2]);
+      else
+        auxList.add(Separator.spacer(space: space));
+    }
+
+    return auxList;
   }
 }
