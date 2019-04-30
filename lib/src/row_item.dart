@@ -139,20 +139,18 @@ class RowItem extends StatelessWidget {
   /// It checks if can be clickable, with the [clickable] parameter.
   /// Various of its paremeters can be set.
   static Widget _text(String text, {TextStyle style, bool clickable = false}) {
-    final TextStyle finalStyle = style != null
-        ? style.copyWith(
-            decoration:
-                clickable ? TextDecoration.underline : TextDecoration.none,
-          )
-        : TextStyle(
-            decoration:
-                clickable ? TextDecoration.underline : TextDecoration.none,
-          );
-
     return Text(
       text,
       overflow: TextOverflow.ellipsis,
-      style: finalStyle,
+      style: style != null
+          ? style.copyWith(
+              decoration:
+                  clickable ? TextDecoration.underline : TextDecoration.none,
+            )
+          : TextStyle(
+              decoration:
+                  clickable ? TextDecoration.underline : TextDecoration.none,
+            ),
     );
   }
 }

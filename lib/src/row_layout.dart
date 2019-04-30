@@ -9,7 +9,7 @@ class RowLayout extends StatelessWidget {
   final EdgeInsets padding;
   final double space;
 
-  RowLayout({
+  const RowLayout({
     Key key,
     this.children,
     this.padding = EdgeInsets.zero,
