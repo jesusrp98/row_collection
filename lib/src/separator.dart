@@ -20,6 +20,11 @@ class Separator {
     return SizedBox(height: 8);
   }
 
+  /// It's a simple divider, you know, with default variables.
+  static thickDivider({double height = 24, double indent = 0}) {
+    return Divider(height: height, indent: indent);
+  }
+
   /// Divider with height 0, as thin as a piece of paper.
   static divider({double indent = 0}) {
     return Divider(height: 0, indent: indent);
