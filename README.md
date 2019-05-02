@@ -32,6 +32,19 @@ Both kind of widgets (`RowItem` & `Separator`) offer ways to be customizable. Fo
 ## Example
 Here is an example of a simple use of this package. If you want to take a deeper look at the example, take a look at the [example/](https://github.com/jesusrp98/row_collection/tree/master/example) folder provided with the project.
 ```
+RowLayout(
+  padding: EdgeInsets.all(16),
+  children: <Widget>[
+    RowItem.text('English', 'Hello'),
+    RowItem.text('Español', 'Hola'),
+    Separator.divider(),
+    RowItem.text('English', 'Bye'),
+    RowItem.text('Español', 'Adiós'),
+  ],
+),
+```
+Here's another way to achieve the same layout, using the `Column` widget.
+```
 Column(
   children: <Widget>[
     RowItem.text('English', 'Hello'),
