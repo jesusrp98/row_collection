@@ -36,6 +36,16 @@ class RowLayout extends StatelessWidget {
     );
   }
 
+  /// Named constructor meant to be used inside a [Scaffold] widget.
+  /// It automatically applies a padding of [16] for all edges.
+  factory RowLayout.body({List<Widget> children, double space}) {
+    return RowLayout(
+      children: children,
+      padding: EdgeInsets.all(16),
+      space: space,
+    );
+  }
+
   /// This method receives a [list] object, and intercalate its
   /// content with [Separator.spacer] widgets, using a 'for' loop.
   List<Widget> _intercalateSpacer(List<Widget> list) {
