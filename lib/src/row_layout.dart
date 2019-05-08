@@ -9,11 +9,24 @@ class RowLayout extends StatelessWidget {
   final EdgeInsets padding;
   final double space;
 
+  final MainAxisAlignment mainAxisAlignment;
+  final MainAxisSize mainAxisSize;
+  final CrossAxisAlignment crossAxisAlignment;
+  final TextDirection textDirection;
+  final VerticalDirection verticalDirection;
+  final TextBaseline textBaseline;
+
   const RowLayout({
     Key key,
     this.children,
     this.padding = EdgeInsets.zero,
     this.space = 12,
+    this.mainAxisAlignment = MainAxisAlignment.start,
+    this.mainAxisSize = MainAxisSize.max,
+    this.crossAxisAlignment = CrossAxisAlignment.center,
+    this.textDirection,
+    this.verticalDirection = VerticalDirection.down,
+    this.textBaseline,
   }) : super(key: key);
 
   @override
@@ -21,18 +34,14 @@ class RowLayout extends StatelessWidget {
     return Padding(
       padding: padding,
       child: Column(
+        mainAxisAlignment: mainAxisAlignment,
+        mainAxisSize: mainAxisSize,
+        crossAxisAlignment: crossAxisAlignment,
+        textDirection: textDirection,
+        verticalDirection: verticalDirection,
+        textBaseline: textBaseline,
         children: _intercalateSpacer(children),
       ),
-    );
-  }
-
-  /// Named constructor meant to be used inside [Card] widgets.
-  /// It automatically applies a padding of [12] for all edges.
-  factory RowLayout.card({List<Widget> children, double space = 12}) {
-    return RowLayout(
-      children: children,
-      padding: EdgeInsets.all(18),
-      space: space,
     );
   }
 
@@ -43,6 +52,16 @@ class RowLayout extends StatelessWidget {
       children: children,
       padding: EdgeInsets.all(16),
       space: space,
+    );
+  }
+
+  /// Named constructor meant to be used inside a [Scaffold] widget, full of [Card] widgets.
+  /// It automatically applies a padding of [8] for all edges, and a space of [6].
+  factory RowLayout.cardList({List<Widget> cards}) {
+    return RowLayout(
+      children: cards,
+      padding: EdgeInsets.all(8),
+      space: 6,
     );
   }
 

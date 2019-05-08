@@ -11,13 +11,13 @@ class Separator {
   }
 
   /// Smaller spacer, ment be combined with [RowItem] widgets.
-  static smallSpacer({double space = 8}) {
-    return SizedBox(height: space, width: space);
+  static smallSpacer() {
+    return SizedBox(height: 8, width: 8);
   }
 
   /// Normal spacer, but oriented to work separating [Card] widgets.
   static cardSpacer() {
-    return SizedBox(height: 8);
+    return SizedBox(height: 6);
   }
 
   /// It's a simple divider, you know, with default variables.
