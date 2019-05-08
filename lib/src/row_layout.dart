@@ -39,15 +39,9 @@ class RowLayout extends StatelessWidget {
   /// This method receives a [list] object, and intercalate its
   /// content with [Separator.spacer] widgets, using a 'for' loop.
   List<Widget> _intercalateSpacer(List<Widget> list) {
-    final List<Widget> auxList = [];
-
-    for (int i = 0; i < list.length * 2 - 1; ++i) {
-      if (i.isEven)
-        auxList.add(list[i ~/ 2]);
-      else
-        auxList.add(Separator.spacer(space: space));
-    }
-
-    return auxList;
+    return [
+      for (int i = 0; i < list.length * 2 - 1; ++i)
+        if (i.isEven) list[i ~/ 2] else Separator.spacer(space: space)
+    ];
   }
 }
