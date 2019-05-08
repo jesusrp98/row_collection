@@ -20,6 +20,7 @@ As the baseline widget, there's the `RowItem` widget. It offers a multitude of o
 This library offers ways to separate this and other interface elements, using the already-implemented `Separator` class:
 * **Spacers:** This kind of elements helps to separate UI elements, such as `RowItem` widgets.
 * **Dividers:** Helpful when you want to emphasize separation between sections.
+* **Row layouts:** Separate widgets automatically using `Separator.spacer` items.
 * **Empty elements:** Useful when you need to use an 'empty' widget, with `height` & `width` values equal to `0`.
 
 <p align="center">
@@ -31,6 +32,18 @@ Both kind of widgets (`RowItem` & `Separator`) offer ways to be customizable. Fo
 
 ## Example
 Here is an example of a simple use of this package. If you want to take a deeper look at the example, take a look at the [example/](https://github.com/jesusrp98/row_collection/tree/master/example) folder provided with the project.
+```
+RowLayout.body(
+  children: <Widget>[
+    RowItem.text('English', 'Hello'),
+    RowItem.text('Español', 'Hola'),
+    Separator.divider(),
+    RowItem.text('English', 'Bye'),
+    RowItem.text('Español', 'Adiós'),
+  ],
+),
+```
+Here's another way to achieve the same layout, using the `Column` widget.
 ```
 Column(
   children: <Widget>[

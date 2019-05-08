@@ -6,13 +6,13 @@ import 'package:flutter/material.dart';
 /// default parameters, which will help developers streamline their desings.
 class Separator {
   /// Normal spacer. This widget can be combined with [RowItem] widgets.
-  static spacer({double height = 12, double width = 12}) {
-    return SizedBox(height: height, width: width);
+  static spacer({double space = 12}) {
+    return SizedBox(height: space, width: space);
   }
 
   /// Smaller spacer, ment be combined with [RowItem] widgets.
-  static smallSpacer({double height = 8, double width = 8}) {
-    return SizedBox(height: height, width: width);
+  static smallSpacer({double space = 8}) {
+    return SizedBox(height: space, width: space);
   }
 
   /// Normal spacer, but oriented to work separating [Card] widgets.
@@ -21,12 +21,12 @@ class Separator {
   }
 
   /// It's a simple divider, you know, with default variables.
-  static divider({double height = 24, double indent = 0}) {
+  static thickDivider({double height = 24, double indent = 0}) {
     return Divider(height: height, indent: indent);
   }
 
   /// Divider with height 0, as thin as a piece of paper.
-  static thinDivider({double indent = 0}) {
+  static divider({double indent = 0}) {
     return Divider(height: 0, indent: indent);
   }
 

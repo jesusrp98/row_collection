@@ -59,10 +59,12 @@ class RowItem extends StatelessWidget {
   factory RowItem.text(
     String title,
     String description, {
+    Key key,
     TextStyle titleStyle,
     TextStyle descriptionStyle,
   }) {
     return RowItem(
+      key: key,
       title: _text(title, style: titleStyle),
       description: _text(description, style: descriptionStyle),
     );
@@ -74,11 +76,13 @@ class RowItem extends StatelessWidget {
   factory RowItem.icon(
     String title,
     bool status, {
+    Key key,
     TextStyle titleStyle,
     Color iconColor,
     double size = 16,
   }) {
     return RowItem(
+      key: key,
       title: _text(title, style: titleStyle),
       description: _icon(
         status,
@@ -94,11 +98,13 @@ class RowItem extends StatelessWidget {
   factory RowItem.clickable(
     String title,
     String description, {
+    Key key,
     TextStyle titleStyle,
     TextStyle descriptionStyle,
     VoidCallback onTap,
   }) {
     return RowItem(
+      key: key,
       title: _text(title, style: titleStyle),
       description: AbsorbPointer(
         absorbing: onTap == null,
@@ -133,20 +139,18 @@ class RowItem extends StatelessWidget {
   /// It checks if can be clickable, with the [clickable] parameter.
   /// Various of its paremeters can be set.
   static Widget _text(String text, {TextStyle style, bool clickable = false}) {
-    final TextStyle finalStyle = style != null
-        ? style.copyWith(
-            decoration:
-                clickable ? TextDecoration.underline : TextDecoration.none,
-          )
-        : TextStyle(
-            decoration:
-                clickable ? TextDecoration.underline : TextDecoration.none,
-          );
-
     return Text(
       text,
       overflow: TextOverflow.ellipsis,
-      style: finalStyle,
+      style: style != null
+          ? style.copyWith(
+              decoration:
+                  clickable ? TextDecoration.underline : TextDecoration.none,
+            )
+          : TextStyle(
+              decoration:
+                  clickable ? TextDecoration.underline : TextDecoration.none,
+            ),
     );
   }
 }
