@@ -1,3 +1,8 @@
+## [0.2.1] - May 12th, 2019
+
+* Changed `RowLayouy.cardList` space from 6 to 4.
+* Deprecated `thickDivider` & `cardSpacer` in Separated.
+
 ## [0.2.0] - May 9th, 2019
 
 * **BREAKING CHANGE:** In `RowLayout`, substituted `card` named constructor to `cardList`.

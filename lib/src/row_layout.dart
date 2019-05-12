@@ -56,12 +56,12 @@ class RowLayout extends StatelessWidget {
   }
 
   /// Named constructor meant to be used inside a [Scaffold] widget, full of [Card] widgets.
-  /// It automatically applies a padding of [8] for all edges, and a space of [6].
+  /// It automatically applies a padding of [8] for all edges, and a space of [4].
   factory RowLayout.cardList({List<Widget> cards}) {
     return RowLayout(
       children: cards,
       padding: EdgeInsets.all(8),
-      space: 6,
+      space: 4,
     );
   }
 

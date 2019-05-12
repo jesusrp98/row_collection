@@ -16,11 +16,13 @@ class Separator {
   }
 
   /// Normal spacer, but oriented to work separating [Card] widgets.
+  @deprecated
   static cardSpacer() {
-    return SizedBox(height: 6);
+    return SizedBox(height: 4);
   }
 
   /// It's a simple divider, you know, with default variables.
+  @deprecated
   static thickDivider({double height = 24, double indent = 0}) {
     return Divider(height: height, indent: indent);
   }
