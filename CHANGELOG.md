@@ -1,3 +1,8 @@
+## [0.2.2] - June 24th, 2019
+
+* Updated example project.
+* Fixed text alignment when overflow.
+
 ## [0.2.1] - May 12th, 2019
 
 * Changed `RowLayouy.cardList` space from 6 to 4.
