@@ -11,6 +11,11 @@ class IconColor {
   static const Color empty = Colors.blueGrey;
 }
 
+/// TEXT POSITION ENUM
+/// This variable type helps to identify if the text is in the 'title' position,
+/// or rather in the 'description' position.
+enum TextPosition { title, description }
+
 /// ROW ITEM WIDGET
 /// This widget has been designed to represent a text, with its associated value.
 /// The [title] widget will be located at the left of the [RowItem] widget,
@@ -36,14 +41,12 @@ class RowItem extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
         Expanded(
-          flex: 5,
           child: Align(
             alignment: Alignment.centerLeft,
             child: title,
           ),
         ),
         Expanded(
-          flex: 5,
           child: Align(
             alignment: Alignment.centerRight,
             child: description,
@@ -65,8 +68,16 @@ class RowItem extends StatelessWidget {
   }) {
     return RowItem(
       key: key,
-      title: _text(title, style: titleStyle),
-      description: _text(description, style: descriptionStyle),
+      title: _text(
+        title,
+        style: titleStyle,
+        position: TextPosition.title,
+      ),
+      description: _text(
+        description,
+        style: descriptionStyle,
+        position: TextPosition.description,
+      ),
     );
   }
 
@@ -83,7 +94,11 @@ class RowItem extends StatelessWidget {
   }) {
     return RowItem(
       key: key,
-      title: _text(title, style: titleStyle),
+      title: _text(
+        title,
+        style: titleStyle,
+        position: TextPosition.title,
+      ),
       description: _icon(
         status,
         color: iconColor,
@@ -105,13 +120,18 @@ class RowItem extends StatelessWidget {
   }) {
     return RowItem(
       key: key,
-      title: _text(title, style: titleStyle),
+      title: _text(
+        title,
+        style: titleStyle,
+        position: TextPosition.title,
+      ),
       description: AbsorbPointer(
         absorbing: onTap == null,
         child: InkResponse(
           child: _text(
             description,
             style: descriptionStyle,
+            position: TextPosition.description,
             clickable: onTap != null,
           ),
           onTap: onTap,
@@ -138,10 +158,17 @@ class RowItem extends StatelessWidget {
   /// Returns a [Text] widget, using the [text] variable.
   /// It checks if can be clickable, with the [clickable] parameter.
   /// Various of its paremeters can be set.
-  static Widget _text(String text, {TextStyle style, bool clickable = false}) {
+  static Widget _text(
+    String text, {
+    TextStyle style,
+    bool clickable = false,
+    @required TextPosition position,
+  }) {
     return Text(
       text,
       overflow: TextOverflow.ellipsis,
+      textAlign:
+          position == TextPosition.title ? TextAlign.start : TextAlign.end,
       style: style != null
           ? style.copyWith(
               decoration:
