@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-/// SEPARATOR CLASS
 /// This class is a collection of various already-defined
 /// material widgets. In this case, the widgets have multiple
 /// default parameters, which will help developers streamline their desings.

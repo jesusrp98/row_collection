@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-/// ICON COLOR CLASS
 /// It defines the default colors used in the [RowItem.icon] widget.
 /// The [positive] color will be used when the boolean parameter is TRUE,
 /// the [negative] color when it's FALSE, and when its value is considered NULL,
@@ -11,12 +10,10 @@ class IconColor {
   static const Color empty = Colors.blueGrey;
 }
 
-/// TEXT POSITION ENUM
 /// This variable type helps to identify if the text is in the 'title' position,
 /// or rather in the 'description' position.
 enum TextPosition { title, description }
 
-/// ROW ITEM WIDGET
 /// This widget has been designed to represent a text, with its associated value.
 /// The [title] widget will be located at the left of the [RowItem] widget,
 /// and the [description] widget, at the right.
@@ -56,7 +53,6 @@ class RowItem extends StatelessWidget {
     );
   }
 
-  /// ROW ITEM: TEXT
   /// Builds a 'text-to-text' widget. Useful when the associated
   /// value can be represented with a [Text] widget.
   factory RowItem.text(
@@ -81,7 +77,6 @@ class RowItem extends StatelessWidget {
     );
   }
 
-  /// ROW ITEM: ICON
   /// Builds a 'text-to-boolean' widget. Useful when the associated
   /// value with a boolean value, which can be represented with an icon.
   factory RowItem.icon(
@@ -107,7 +102,6 @@ class RowItem extends StatelessWidget {
     );
   }
 
-  /// ROW ITEM: CLICKABLE
   /// Builds a 'text-to-text' widget. It allows the associated value,
   /// in this case a [Text] widget, to be clickable by the user.
   factory RowItem.clickable(
