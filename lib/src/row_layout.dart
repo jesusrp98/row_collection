@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:row_collection/row_collection.dart';
 
-/// ROW LAYOUR WIDGET
 /// This widget helps developers create a layout, full of widgets,
 /// with a [Separator.spacer] widget. You can stablish other parameters.
 class RowLayout extends StatelessWidget {
@@ -47,21 +46,50 @@ class RowLayout extends StatelessWidget {
 
   /// Named constructor meant to be used inside a [Scaffold] widget.
   /// It automatically applies a padding of [16] for all edges.
-  factory RowLayout.body({List<Widget> children, double space = 12}) {
+  factory RowLayout.body({
+    List<Widget> children,
+    double space,
+    MainAxisAlignment mainAxisAlignment,
+    MainAxisSize mainAxisSize,
+    CrossAxisAlignment crossAxisAlignment,
+    TextDirection textDirection,
+    VerticalDirection verticalDirection,
+    TextBaseline textBaseline,
+  }) {
     return RowLayout(
       children: children,
-      padding: EdgeInsets.all(16),
+      padding: const EdgeInsets.all(16),
       space: space,
+      mainAxisAlignment: mainAxisAlignment,
+      mainAxisSize: mainAxisSize,
+      crossAxisAlignment: crossAxisAlignment,
+      textDirection: textDirection,
+      verticalDirection: verticalDirection,
+      textBaseline: textBaseline,
     );
   }
 
-  /// Named constructor meant to be used inside a [Scaffold] widget, full of [Card] widgets.
+  /// Named constructor meant to be used inside a [Scaffold] widget, ment for a stack of [Card]s.
   /// It automatically applies a padding of [8] for all edges, and a space of [4].
-  factory RowLayout.cardList({List<Widget> cards}) {
+  factory RowLayout.cards({
+    List<Widget> children,
+    MainAxisAlignment mainAxisAlignment,
+    MainAxisSize mainAxisSize,
+    CrossAxisAlignment crossAxisAlignment,
+    TextDirection textDirection,
+    VerticalDirection verticalDirection,
+    TextBaseline textBaseline,
+  }) {
     return RowLayout(
-      children: cards,
-      padding: EdgeInsets.all(8),
+      children: children,
+      padding: const EdgeInsets.all(8),
       space: 4,
+      mainAxisAlignment: mainAxisAlignment,
+      mainAxisSize: mainAxisSize,
+      crossAxisAlignment: crossAxisAlignment,
+      textDirection: textDirection,
+      verticalDirection: verticalDirection,
+      textBaseline: textBaseline,
     );
   }
 
