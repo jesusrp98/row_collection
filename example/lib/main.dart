@@ -20,7 +20,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text('Row collection')),
       body: ListView(children: <Widget>[
-        RowLayout.cardList(cards: <Widget>[
+        RowLayout.cards(children: <Widget>[
           Card(
             child: RowLayout.body(children: <Widget>[
               RowItem.text('English', 'Hello'),
