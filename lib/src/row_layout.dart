@@ -47,13 +47,13 @@ class RowLayout extends StatelessWidget {
   /// Named constructor meant to be used inside a [Scaffold] widget.
   /// It automatically applies a padding of [16] for all edges.
   factory RowLayout.body({
-    List<Widget> children,
-    double space,
-    MainAxisAlignment mainAxisAlignment,
-    MainAxisSize mainAxisSize,
-    CrossAxisAlignment crossAxisAlignment,
+    @required List<Widget> children,
+    double space = 12,
+    MainAxisAlignment mainAxisAlignment = MainAxisAlignment.start,
+    MainAxisSize mainAxisSize = MainAxisSize.max,
+    CrossAxisAlignment crossAxisAlignment = CrossAxisAlignment.center,
     TextDirection textDirection,
-    VerticalDirection verticalDirection,
+    VerticalDirection verticalDirection = VerticalDirection.down,
     TextBaseline textBaseline,
   }) {
     return RowLayout(
@@ -72,12 +72,12 @@ class RowLayout extends StatelessWidget {
   /// Named constructor meant to be used inside a [Scaffold] widget, ment for a stack of [Card]s.
   /// It automatically applies a padding of [8] for all edges, and a space of [4].
   factory RowLayout.cards({
-    List<Widget> children,
-    MainAxisAlignment mainAxisAlignment,
-    MainAxisSize mainAxisSize,
-    CrossAxisAlignment crossAxisAlignment,
+    @required List<Widget> children,
+    MainAxisAlignment mainAxisAlignment = MainAxisAlignment.start,
+    MainAxisSize mainAxisSize = MainAxisSize.max,
+    CrossAxisAlignment crossAxisAlignment = CrossAxisAlignment.center,
     TextDirection textDirection,
-    VerticalDirection verticalDirection,
+    VerticalDirection verticalDirection = VerticalDirection.down,
     TextBaseline textBaseline,
   }) {
     return RowLayout(

@@ -1,4 +1,8 @@
-## [0.2.3] - Jule 23th, 2019
+## [0.2.3+1] - Jule 27th, 2019
+
+* Bugs fixed.
+
+## [0.2.3] - Jule 23rd, 2019
 
 * **BREAKING CHANGE:** In `RowLayout`, substituted `cardList` named constructor to `cards`.
 * **BREAKING CHANGE:** In `RowLayout.cards` constructor, substituted `cards` parameter to `children`.
