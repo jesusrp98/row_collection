@@ -136,7 +136,7 @@ class RowItem extends StatelessWidget {
 
   /// Returns an icon based on the [value] variable.
   /// Various [Icon] parameters can be set as well.
-  static Widget _icon(bool value, {Color color, double size}) {
+  static Icon _icon(bool value, {Color color, double size}) {
     final Color finalColor = color ??
         (value == null
             ? IconColor.empty
@@ -152,7 +152,7 @@ class RowItem extends StatelessWidget {
   /// Returns a [Text] widget, using the [text] variable.
   /// It checks if can be clickable, with the [clickable] parameter.
   /// Various of its paremeters can be set.
-  static Widget _text(
+  static Text _text(
     String text, {
     TextStyle style,
     bool clickable = false,
